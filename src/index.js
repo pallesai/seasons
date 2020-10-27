@@ -11,6 +11,10 @@ class App extends React.Component {
             lat: null,
             errorMessage: ''
         };
+    }
+
+    componentDidMount() {
+        console.log("Called componentDidMount()");
 
         window.navigator.geolocation.getCurrentPosition(
             position => {
@@ -25,7 +29,7 @@ class App extends React.Component {
         );
     }
 
-    // React says we have to define render method
+    // React says we must to define render method
     render() {
 
         if (this.state.errorMessage && !this.state.lat) {
@@ -39,9 +43,7 @@ class App extends React.Component {
         return <div> Loading!</div>
     };
 
-    componentDidMount() {
-        console.log("Called componentDidMount()");
-    }
+
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("Called componentDidUpdate()");
