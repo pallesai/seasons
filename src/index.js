@@ -39,6 +39,18 @@ class App extends React.Component {
         return <div> Loading!</div>
     };
 
+    componentDidMount() {
+        console.log("Called componentDidMount()");
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("Called componentDidUpdate()");
+    }
+
+    componentWillUnmount() {
+        console.log("Called componentDidUnMount()");
+    }
+
 }
 
 ReactDOM.render(<App />, document.querySelector('#root'));
@@ -72,4 +84,17 @@ ReactDOM.render(<App />, document.querySelector('#root'));
     React calls our 'render' method a second time
     Render method returns some(updated) JSX
 
+ */
+
+/*
+    Component Life Cycle
+
+    constructor
+    render
+    (content visible on screen)
+    componentDidMount -> recomended to keep data loading logic in componentDidMount
+    (sit and wait for updates)
+    componenetDidUpdate ->Good place to add more data loading when state/props change -> render will be called
+    (sit and wait until this component is no longer shown)
+    componenetWillUnMount
  */
