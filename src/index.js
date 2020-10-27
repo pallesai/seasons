@@ -3,15 +3,10 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        // State must be initialized, only time we do direct assignment to the state
-        this.state = {
-            lat: null,
-            errorMessage: ''
-        };
-    }
+    state = {
+        lat: null,
+        errorMessage: ''
+    };
 
     componentDidMount() {
         console.log("Called componentDidMount()");
